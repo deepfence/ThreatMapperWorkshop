@@ -2,7 +2,12 @@
  
 - CNAPP Security Workshop using ThreatMapper 
 
-Deepfence Cloud is free for 14 days, you can create up to 2 consoles and allows 20 hosts to be monitored. - https://deepfence.cloud/auth/signup 
+> Deepfence Cloud is free for 14 days, you can create up to 2 consoles and allows 20 hosts to be monitored. - https://deepfence.cloud/auth/signup 
+
+
+> Deepfence ThreatStryker - Enterprise Cloud Native Application Protection - Now Availbe On AWS Marketplace - https://aws.amazon.com/marketplace/pp/prodview-6ek6jqkzfpmta?sr=0-1&ref_=beagle&applicationId=AWSMPContessa
+
+ 
 
 - CHAPTER I
 ## Introduction
@@ -14,8 +19,6 @@ CHAPTER 2
 See what others don’t. Protect what others can’t.
 
 ## CSPM - Cloud Security Posture Management
-  - What is CSPM
-  - Why CSPM
   - CSPM for AWS via Theatmapper 
   - CSPM for Azure via Theatmapper
   - CSPM for GCP via Theatmapper
