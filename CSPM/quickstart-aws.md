@@ -17,9 +17,10 @@ $curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 $sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 $apt-cache policy docker-ce
 $sudo apt install -y docker-ce
-
+```
 
 // verify docker installation 
+```
 $ docker
 
 Usage:  docker [OPTIONS] COMMAND
@@ -110,9 +111,9 @@ Global Options:
 Run 'docker COMMAND --help' for more information on a command.
 
 For more help on how to use Docker, head to https://docs.docker.com/go/guides/
-
+````
 // install docker-compose
-
+```
 
  wget https://github.com/deepfence/ThreatMapper/raw/release-2.0/deployment-scripts/docker-compose.yml
  sudo docker-compose -f docker-compose.yml up --detach
@@ -157,16 +158,16 @@ For more help on how to use Docker, head to https://docs.docker.com/go/guides/
  ✔ Container deepfence-console-agent        Started                                                                0.0s 
  ✔ Container deepfence-ui                   Started                                                                0.0s 
  ✔ Container deepfence-scheduler            Started                                                                0.0s 
-
+```
 
 Open the browser and access the Deepfence UI using the following URL: EC2 Instance Public IP 
 
 Register as admin for management console 
 
 
-![register](./images/register.png/)
+![](/images/create-account.png)
 
-![](/images/console.png/)
+![](/images/console.png)
 
 ![](/)
 
