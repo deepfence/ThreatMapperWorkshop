@@ -8,20 +8,16 @@
 > Deepfence ThreatStryker - Enterprise Cloud Native Application Protection - Now Availbe On AWS Marketplace - https://aws.amazon.com/marketplace/pp/prodview-6ek6jqkzfpmta?sr=0-1&ref_=beagle&applicationId=AWSMPContessa
 
  
-
-- CHAPTER I
 ## Introduction
-  - About CNAPP 
-  - CNAPP Architecture 
+  - [about CNAPP](/Introduction/about-cnapp.md)
+  - [CNAPP Architecture](/Introduction/CNAPP-Architecture.md) 
 
 
-CHAPTER 2
-See what others don’t. Protect what others can’t.
+> See what others don’t. Protect what others can’t.
 
 ## CSPM - Cloud Security Posture Management
-  - CSPM for AWS via Theatmapper 
-  - CSPM for Azure via Theatmapper
-  - CSPM for GCP via Theatmapper
+- [Deploy Deepfence Console and add linux host](/CSPM/quickstart-console.md) 
+- [Deploy kubernetes agent using helm]
 
 ## CWPP - Cloud Workload Protection Platfrom 
     - What is CWPP

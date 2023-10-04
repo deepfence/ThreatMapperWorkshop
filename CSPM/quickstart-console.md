@@ -1,9 +1,8 @@
-- AWS Linux 
-- AWS Container Services 
-- AWS EKS Cluster 
 
+- Step 1 : Deepfence ThreatMapper Console on AWS Linux Ubuntu 
 
-- Use case 1:
+> Prerequisites:
+1. create aws instance with allowing 443 port on security group and storage > 20GB
 
 Scenario: scan AWS Linux instance for vulnerabilities and compliance violations
 
@@ -12,11 +11,8 @@ create EC2 Instance
 SSh into the instance 
 
 ```
-$sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
-$curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-$sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-$apt-cache policy docker-ce
-$sudo apt install -y docker-ce
+curl -fsSL https://get.docker.com -o install-docker.sh
+sh install-docker.sh 
 ```
 
 // verify docker installation 
@@ -132,9 +128,8 @@ For more help on how to use Docker, head to https://docs.docker.com/go/guides/
  ✔ deepfence-console-agent 35 layers [⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                 49.6s 
  ✔ deepfence-worker Pulled                                                                                        28.4s 
  ✔ deepfence-router 8 layers [⣿⣿⣿⣿⣿⣿⣿⣿]      0B/0B      Pulled                                                    27.0s 
-                                                                                                                        
-                                                                                                                        
-                                                                                                                       
+                                                                                                                     
+                                               
 [+] Running 22/22
  ✔ Network ubuntu_deepfence_net             Created                                                                0.1s 
  ✔ Volume "ubuntu_deepfence_neo4j_data"     Created                                                                0.0s 
@@ -169,18 +164,44 @@ Register as admin for management console
 
 ![](/images/console.png)
 
-![](/)
 
-![](./)
+Linux VM or Bare Metal Host 
+
+![](/images/connection-instructions.png)
+
+![](/images/Docker-linux-agent.png)
+
+> add linux agent using the following command with your key 
 
 
+```
+sudo docker run -dit \
+  --cpus=".2" \
+  --name=deepfence-agent \
+  --restart on-failure \
+  --pid=host \
+  --net=host \
+  --privileged=true \
+  -v /sys/kernel/debug:/sys/kernel/debug:rw \
+  -v /var/log/fenced \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /:/fenced/mnt/host/:ro \
+  -e USER_DEFINED_TAGS="2.0.0" \
+  -e MGMT_CONSOLE_URL="" \
+  -e MGMT_CONSOLE_PORT="443" \
+  -e DEEPFENCE_KEY="" \
+  deepfenceio/deepfence_agent_ce:2.0.0
 
-- Use case 2:
+```
 
-Scenario: scan AWS Container Services for vulnerabilities and compliance violations
+Lets scan the host for vulnerabilities and compliance violations
+
+![](/images/start-scan.png)
+
+- Vulnerabilities Scan 
+- Secret Scan 
+- Malware Scan 
+- Porture Scan 
 
 
-- Use case 3: 
-
-Scenario: scan AWS EKS Cluster for vulnerabilities and compliance violations
 
