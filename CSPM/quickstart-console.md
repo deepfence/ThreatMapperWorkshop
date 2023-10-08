@@ -198,10 +198,65 @@ Lets scan the host for vulnerabilities and compliance violations
 
 ![](/images/start-scan.png)
 
-- Vulnerabilities Scan 
-- Secret Scan 
-- Malware Scan 
+## Vulnerabilities Scan 
+
+Vulnerability scan is a process of identifying security vulnerabilities in the system. Deepfence scans the host for vulnerabilities and provides a detailed report of the vulnerabilities found. Deepfence uses the following sources for vulnerability scanning
+
+![](/images/vulnerabilities-host.png)
+
+![](/images/vuln-host.png)
+
+fliter most critical vulnerabilities and rank them based on CVSS score
+
+![](/images/most-vuln.png)
+
+
+## Secret Scan 
+
+Secret scan is a process of identifying secrets in the system. Deepfence scans the host for secrets and provides a detailed report of the secrets found.
+
+- SecretScanner is a standalone tool that retrieves and searches container and host filesystems, matching the contents against a database of approximately 140 secret types.
+
+![](https://community.deepfence.io/assets/images/secretscanner-663cb1d8295b552e39ba0654345b4d74.svg)
+
+- SecretScanner is also included in ThreatMapper, an open source scanner that identifies vulnerable dependencies and unprotected secrets in cloud native applications, and ranks these vulnerabilities based on their risk-of-exploit.
+
+![](/images/Secret-dashboard.png)
+
+![](/images/understand-secret.png)
+
+
+## Malware Scan 
+
+Deepfence YaraHunter scans container images, running Docker containers, and filesystems to find indicators of malware. It uses a YARA ruleset to identify resources that match known malware signatures, and may indicate that the container or filesystem has been compromised.
+
+![](https://community.deepfence.io/assets/images/yarahunter-2daf9014c2065d46c34940565311dfb7.svg)
+
+Key capabilities:
+
+- Scan running and at-rest containers; scan filesystems; scan during CI/CD build operations
+- Run anywhere: highly-portable, docker container form factor
+- Designed for automation: easy-to-deploy, easy-to-parse JSON output
+
+
+![](/images/malware.png)
+
+Yarahunter is also included in ThreatMapper, an open source scanner that identifies malware 
+
+![](/images/malware-report.png)
+
 - Porture Scan 
 
+currently we have 1 linux host lets scan porture - compliance violations 
 
+![](/images/porture.png)
+
+
+You will find HIPPA , GDPR , NIST ,PCI compliances check and information regarding it 
+
+
+> What if you wanna scan your kubernetes cluster ? using Threatmapper agent 
+
+
+Next Step : [Deploy kubernetes agent on kubernetes using helm chart](./Kubernetes-agent.md)
 
