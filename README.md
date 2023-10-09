@@ -17,7 +17,7 @@
 
 ## CSPM - Cloud Security Posture Management
 - [Deploy Deepfence Console and add linux host](/CSPM/quickstart-console.md) 
-- [Deploy kubernetes agent using helm]
+- [Deploy kubernetes agent using helm](/CSPM/Kubernetes-agent.md)
 
 ## CWPP - Cloud Workload Protection Platfrom 
     - What is CWPP
